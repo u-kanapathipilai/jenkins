@@ -1,16 +1,21 @@
-pipeline
-{
-agent any
-stages
-{
-stage("version checking")
-{
-steps{
-
-                sh 'docker build . -t my-php-app2'
-            
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'docker build . -t node-todo-app'
+            }
+        }
+        stage('Run') {
+            agent {
+                docker {
+                    image 'node-todo-app'
+                    reuseNode true
+                }
+            }
+            steps {
+                sh 'node app.js'
+            }
+        }
+    }
 }
-}
-
-
-}}
