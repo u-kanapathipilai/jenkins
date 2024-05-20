@@ -1,14 +1,14 @@
 pipeline
 {
-agent {
-        docker { image 'my-php-app' }
-    }
+agent any
 stages
 {
 stage("version checking")
 {
 steps{
-sh "docker run my-php-app"
+
+                sh 'docker build . -t node-todo-app'
+            
 }
 }
 
