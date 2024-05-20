@@ -6,14 +6,9 @@ stages
 stage("version checking")
 {
 steps{
-sh "php --version"
+sh "docker run my-php-app"
 }
 }
-stage("running php code")
-{
-steps{
-sh "php hello.php"
-}
-}
+
 
 }}
