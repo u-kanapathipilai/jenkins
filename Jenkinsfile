@@ -1,6 +1,8 @@
 pipeline
 {
-agent any
+agent {
+        docker { image 'my-php-app' }
+    }
 stages
 {
 stage("version checking")
