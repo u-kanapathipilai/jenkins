@@ -3,22 +3,17 @@ pipeline
 agent any
 stages
 {
-stage("build")
+stage("version checking")
 {
 steps{
-echo "building the application"
+sh "php --version"
 }
 }
-stage("test")
+stage("running php code")
 {
 steps{
-echo "testing the application"
+sh "php hello.php"
 }
 }
-stage("deploy")
-{
-steps{
-echo "deploying the application"
-}
-}
+
 }}
