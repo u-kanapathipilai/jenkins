@@ -7,7 +7,7 @@ stage("version checking")
 {
 steps{
 
-                sh 'docker build . -t node-todo-app'
+                sh 'docker build -t my-php-app'
             
 }
 }
