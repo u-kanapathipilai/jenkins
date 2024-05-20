@@ -7,7 +7,7 @@ stage("version checking")
 {
 steps{
 
-                sh 'docker build -t my-php-app'
+                sh 'docker build . -t my-php-app2'
             
 }
 }
