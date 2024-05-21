@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
             
-                sh 'docker run my-php-app'
+                sh 'npm install'
             }
         }
        
