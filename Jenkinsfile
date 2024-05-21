@@ -1,12 +1,23 @@
 pipeline {
-    agent {
-        label 'docker-agent'
-    }
+    agent any
     stages {
-        stage('Test') {
+        stage('Build') {
             steps {
-                sh 'docker --version'
+            
+                sh 'docker run my-php-app'
             }
+        }
+        stage('Run') {
+            agent {
+                docker {
+                    image 'node-todo-app'
+                    reuseNode true
+                }
+            }
+            steps {
+                sh 'node app.js'
+            }
+
         }
     }
 }
