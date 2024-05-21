@@ -4,7 +4,12 @@ pipeline {
         stage('Build') {
             steps {
             
-                sh 'npm install'
+              
+script{
+img='my-php-app'
+docker.image("${img}"=.run('-d -p 80:80')
+}
+
             }
         }
        
