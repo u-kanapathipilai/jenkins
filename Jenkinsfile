@@ -5,12 +5,12 @@ pipeline {
             steps {
             
               
-script{
-img='my-php-app'
-docker.image("${img}").run('-d -p 80:80')
-}
+                    script{
+                        img='my-php-app'
+                        docker.image("${img}").run('-p 80:80')
+                          }
 
-            }
+                    }
         }
        
     }
