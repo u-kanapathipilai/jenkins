@@ -1,13 +1,12 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'jenkinns/jenkins' }
+    }
     stages {
-        stage('Build') {
+        stage('Test') {
             steps {
-                sh 'docker run my-php-app'
+                sh 'docker --version'
             }
-        }
-        stage('Run') {
-           
         }
     }
 }
